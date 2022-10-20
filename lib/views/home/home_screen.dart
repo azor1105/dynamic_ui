@@ -1,5 +1,6 @@
 import 'package:dynamic_ui/cubits/dynamic_ui/dynamic_ui_cubit.dart';
 import 'package:dynamic_ui/views/home/widgets/common_widget_creator.dart';
+import 'package:dynamic_ui/views/home/widgets/group_widget_creator.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:formz/formz.dart';
@@ -30,7 +31,6 @@ class HomeScreen extends StatelessWidget {
             final groupedItems = state.uiRequirements
                 .where((element) => element.group == 'GROUPED')
                 .toList();
-            print(commonItems.length);
             return ListView(
               physics: const BouncingScrollPhysics(),
               children: [
@@ -42,6 +42,15 @@ class HomeScreen extends StatelessWidget {
                     ),
                   ),
                   nameOfGroup: "Common items",
+                ),
+                widgetGroupItem(
+                  items: List.generate(
+                    groupedItems.length,
+                    (index) => GroupWidgetCreator(
+                      uiModel: groupedItems[index],
+                    ),
+                  ),
+                  nameOfGroup: "Grouped items",
                 ),
               ],
             );

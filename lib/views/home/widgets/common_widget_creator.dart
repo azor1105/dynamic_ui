@@ -9,20 +9,23 @@ class CommonWidgetCreator extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (uiModel.type) {
       case 'container':
-        return Container(
-          margin: const EdgeInsets.symmetric(vertical: 10),
-          height: uiModel.height.toDouble(),
-          width: uiModel.width.toDouble(),
-          color: HexColor.fromHex(uiModel.color),
-          child: Center(
-            child: Text(
-              uiModel.type,
-              style: const TextStyle(
-                color: Colors.white,
-                fontSize: 20,
+        return Column(
+          children: [
+            Center(
+              child: Text(
+                uiModel.type,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
               ),
             ),
-          ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              height: uiModel.height.toDouble(),
+              width: uiModel.width.toDouble(),
+              color: HexColor.fromHex(uiModel.color),
+            ),
+          ],
         );
       default:
         return const SizedBox();

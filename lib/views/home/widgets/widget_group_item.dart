@@ -4,7 +4,7 @@ Widget widgetGroupItem(
     {required List<Widget> items, required String nameOfGroup}) {
   return Container(
     margin: const EdgeInsets.all(20),
-    padding: const EdgeInsets.all(10),
+    padding: const EdgeInsets.all(15),
     decoration: BoxDecoration(
       color: Colors.white,
       borderRadius: BorderRadius.circular(15),
@@ -19,7 +19,10 @@ Widget widgetGroupItem(
     ),
     child: Column(
       children: [
-        Text(nameOfGroup),
+        Text(
+          nameOfGroup,
+          style: const TextStyle(fontSize: 20),
+        ),
         ...items,
       ],
     ),

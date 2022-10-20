@@ -9,59 +9,69 @@ class GroupWidgetCreator extends StatelessWidget {
   Widget build(BuildContext context) {
     switch (uiModel.type) {
       case 'column':
-        return Container(
-          color: HexColor.fromHex(uiModel.color),
-          height: uiModel.height.toDouble(),
-          width: uiModel.width.toDouble(),
-          child: Column(
-            children: [
-              Center(
-                child: Text(
-                  uiModel.type,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
+        return Column(
+          children: [
+            Center(
+              child: Text(
+                uiModel.type,
+                style: const TextStyle(
+                  fontSize: 20,
                 ),
               ),
-            ],
-          ),
-        );
-      case 'raw':
-        return Container(
-          color: HexColor.fromHex(uiModel.color),
-          height: uiModel.height.toDouble(),
-          width: uiModel.width.toDouble(),
-          child: Row(
-            children: [
-              Center(
-                child: Text(
-                  uiModel.type,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
-                ),
-              ),
-            ],
-          ),
-        );
-      case 'sizedbox':
-        return Container(
-            color: HexColor.fromHex(uiModel.color),
-            child: SizedBox(
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              color: HexColor.fromHex(uiModel.color),
               height: uiModel.height.toDouble(),
               width: uiModel.width.toDouble(),
-              child: Center(
-                child: Text(
-                  uiModel.type,
-                  style: const TextStyle(
-                    color: Colors.white,
-                    fontSize: 20,
-                  ),
+              child: Column(
+                children: const [],
+              ),
+            ),
+          ],
+        );
+      case 'raw':
+        return Column(
+          children: [
+            Center(
+              child: Text(
+                uiModel.type,
+                style: const TextStyle(
+                  fontSize: 20,
                 ),
               ),
-            ));
+            ),
+            Container(
+              margin: const EdgeInsets.symmetric(vertical: 10),
+              color: HexColor.fromHex(uiModel.color),
+              height: uiModel.height.toDouble(),
+              width: uiModel.width.toDouble(),
+              child: Row(
+                children: const [],
+              ),
+            ),
+          ],
+        );
+      case 'sizedbox':
+        return Column(
+          children: [
+            Center(
+              child: Text(
+                uiModel.type,
+                style: const TextStyle(
+                  fontSize: 20,
+                ),
+              ),
+            ),
+            Container(
+                margin: const EdgeInsets.symmetric(vertical: 10),
+                color: HexColor.fromHex(uiModel.color),
+                child: SizedBox(
+                  height: uiModel.height.toDouble(),
+                  width: uiModel.width.toDouble(),
+                )),
+          ],
+        );
       default:
         return const SizedBox();
     }
