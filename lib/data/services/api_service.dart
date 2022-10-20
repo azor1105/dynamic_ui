@@ -3,9 +3,6 @@ import 'package:dio/dio.dart';
 import 'package:dynamic_ui/data/models/ui_model/ui_model.dart';
 
 class ApiService {
-  ApiService._init();
-  static final ApiService _instance = ApiService._init();
-  static ApiService get instance => _instance;
 
   final _dio = Dio(
     BaseOptions(
