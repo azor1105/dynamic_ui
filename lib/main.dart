@@ -10,10 +10,10 @@ void main() {
       BlocProvider(
         create: (context) => DynamicUiCubit(
           apiService: ApiService(),
-        ),
+        )..getUiRequirements(),
       ),
     ],
-    child: Container(),
+    child: const App(),
   ));
 }
 
