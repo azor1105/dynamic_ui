@@ -14,8 +14,8 @@ import 'package:json_annotation/json_annotation.dart';
 part 'ui_model.g.dart';
 
 @JsonSerializable()
-class UiModelModel {
-  UiModelModel({
+class UiModel {
+  UiModel({
     required this.color,
     required this.group,
     required this.height,
@@ -46,8 +46,8 @@ class UiModelModel {
   @JsonKey(defaultValue: '', name: 'type')
   final String type;
 
-  factory UiModelModel.fromJson(Map<String, dynamic> json) =>
-      _$UiModelModelFromJson(json);
+  factory UiModel.fromJson(Map<String, dynamic> json) =>
+      _$UiModelFromJson(json);
 
-  Map<String, dynamic> toJson() => _$UiModelModelToJson(this);
+  Map<String, dynamic> toJson() => _$UiModelToJson(this);
 }

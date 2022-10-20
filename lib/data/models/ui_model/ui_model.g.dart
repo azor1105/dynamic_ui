@@ -6,7 +6,7 @@ part of 'ui_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-UiModelModel _$UiModelModelFromJson(Map<String, dynamic> json) => UiModelModel(
+UiModel _$UiModelFromJson(Map<String, dynamic> json) => UiModel(
       color: json['color'] as String? ?? '',
       group: json['group'] as String? ?? '',
       height: json['height'] as int? ?? 0,
@@ -16,8 +16,7 @@ UiModelModel _$UiModelModelFromJson(Map<String, dynamic> json) => UiModelModel(
       width: json['width'] as int? ?? 0,
     );
 
-Map<String, dynamic> _$UiModelModelToJson(UiModelModel instance) =>
-    <String, dynamic>{
+Map<String, dynamic> _$UiModelToJson(UiModel instance) => <String, dynamic>{
       'title': instance.title,
       'sort': instance.sort,
       'group': instance.group,
