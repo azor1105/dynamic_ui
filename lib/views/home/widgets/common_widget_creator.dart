@@ -14,6 +14,15 @@ class CommonWidgetCreator extends StatelessWidget {
           height: uiModel.height.toDouble(),
           width: uiModel.width.toDouble(),
           color: HexColor.fromHex(uiModel.color),
+          child: Center(
+            child: Text(
+              uiModel.type,
+              style: const TextStyle(
+                color: Colors.white,
+                fontSize: 20,
+              ),
+            ),
+          ),
         );
       default:
         return const SizedBox();
